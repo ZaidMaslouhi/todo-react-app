@@ -11,7 +11,7 @@ function App() {
     <Body>
       <Container>
         <Header>
-          <img src={logo} alt="chari's logo" className="logo-img" height={80} />
+          <img src={logo} alt="chari's logo" className="logo-img" />
         </Header>
         <Section>
           <Router>

@@ -1,5 +1,5 @@
 import React from "react";
-import { ContentHeader, List } from "../../App.styles";
+import { ContentHeader, List, Loading, Error } from "../../App.styles";
 import User from "./User";
 import useFetch from "../../hooks/useFetch";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -14,15 +14,15 @@ function Users() {
       </ContentHeader>
 
       {loading && (
-        <div>
+        <Loading>
           <ClipLoader />
-        </div>
+        </Loading>
       )}
 
       {error ? (
-        <div>
+        <Error>
           <p>{error}</p>
-        </div>
+        </Error>
       ) : (
         <List>
           {users.map((user) => (

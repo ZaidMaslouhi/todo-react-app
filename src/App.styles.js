@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import backgoundImage from "./assets/images/backgrouond-gradient.png";
+import { ClipLoader } from "react-spinners";
 
 export const Body = styled.div`
   background: url(${backgoundImage}) center bottom/cover no-repeat;
@@ -102,4 +103,22 @@ export const Item = styled.li`
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+`;
+
+export const Loading = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  & ${ClipLoader} {
+    color: #f2a187;
+  }
+`;
+
+export const Error = styled(Loading)`
+  & p {
+    color: #0e284c;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
 `;

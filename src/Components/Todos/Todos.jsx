@@ -1,7 +1,7 @@
 import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import Todo from "./Todo";
-import { ContentHeader, List } from "../../App.styles";
+import { ContentHeader, List, Loading, Error } from "../../App.styles";
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -18,15 +18,15 @@ function Todos() {
         <h3>Todos</h3>
       </ContentHeader>
       {loading && (
-        <div>
+        <Loading>
           <ClipLoader />
-        </div>
+        </Loading>
       )}
 
       {error ? (
-        <div>
+        <Error>
           <p>{error}</p>
-        </div>
+        </Error>
       ) : (
         <List>
           {todos.map((todo) => (
