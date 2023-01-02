@@ -87,3 +87,19 @@ export const ContentHeader = styled.div`
     cursor: pointer;
   }
 `;
+
+export const List = styled.ul`
+  list-style: none;
+  padding: 0rem 1.5rem;
+  margin-top: 0.5rem;
+`;
+
+export const Item = styled.li`
+  padding: 0.5rem 1rem;
+  margin: 0.3rem 0rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+`;

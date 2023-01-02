@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ContentHeader } from "../../App.styles";
+import { ContentHeader, List } from "../../App.styles";
 import axios from "axios";
 import User from "./User";
 
@@ -18,7 +18,7 @@ function Users() {
       <ContentHeader>
         <h3>List of users</h3>
       </ContentHeader>
-      <ul>
+      <List>
         {users &&
           users.map((user) => {
             return (
@@ -31,7 +31,7 @@ function Users() {
               />
             );
           })}
-      </ul>
+      </List>
     </div>
   );
 }
