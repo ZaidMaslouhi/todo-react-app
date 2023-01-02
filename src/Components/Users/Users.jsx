@@ -14,7 +14,7 @@ function Users() {
       </ContentHeader>
 
       {loading && (
-        <Loading>
+        <Loading role="loading">
           <ClipLoader />
         </Loading>
       )}
