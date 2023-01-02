@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ContentHeader } from "../../App.styles";
 import axios from "axios";
+import User from "./User";
 
 function Users() {
   const API_USERS_ENDPOINT = "https://jsonplaceholder.typicode.com/users";
@@ -21,9 +22,13 @@ function Users() {
         {users &&
           users.map((user) => {
             return (
-              <li key={user.id}>
-                {user.name} - {user.username} - {user.email}
-              </li>
+              <User
+                key={user.id}
+                id={user.id}
+                name={user.name}
+                username={user.username}
+                email={user.email}
+              />
             );
           })}
       </ul>
