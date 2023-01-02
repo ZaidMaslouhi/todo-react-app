@@ -1,37 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ContentHeader, List } from "../../App.styles";
-import axios from "axios";
 import User from "./User";
+import useFetch from "../../hooks/useFetch";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function Users() {
-  const API_USERS_ENDPOINT = "https://jsonplaceholder.typicode.com/users";
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    axios.get(API_USERS_ENDPOINT).then((response) => {
-      setUsers(response.data);
-    });
-  }, []);
+  const { data: users, loading, error } = useFetch(`/users`);
 
   return (
     <div className="users">
       <ContentHeader>
         <h3>List of users</h3>
       </ContentHeader>
-      <List>
-        {users &&
-          users.map((user) => {
-            return (
-              <User
-                key={user.id}
-                id={user.id}
-                name={user.name}
-                username={user.username}
-                email={user.email}
-              />
-            );
-          })}
-      </List>
+
+      {loading && (
+        <div>
+          <ClipLoader />
+        </div>
+      )}
+
+      {error ? (
+        <div>
+          <p>{error}</p>
+        </div>
+      ) : (
+        <List>
+          {users.map((user) => (
+            <User
+              key={user.id}
+              id={user.id}
+              name={user.name}
+              username={user.username}
+              email={user.email}
+            />
+          ))}
+        </List>
+      )}
     </div>
   );
 }
