@@ -14,11 +14,11 @@ function Todos() {
   return (
     <div role="todoslist">
       <ContentHeader>
-        <IoIosArrowBack data-testid="back-icon" onClick={() => navigate("/")} />
+        <IoIosArrowBack role="icon" onClick={() => navigate("/")} />
         <h3>Todos</h3>
       </ContentHeader>
       {loading && (
-        <Loading>
+        <Loading role="loading">
           <ClipLoader />
         </Loading>
       )}
