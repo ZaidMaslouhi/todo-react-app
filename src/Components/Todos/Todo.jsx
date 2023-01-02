@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { TodoCard } from "./styles/todo.styles";
 
 function Todo({ title, completed }) {
   return (
-    <li>
+    <TodoCard isCompleted={completed}>
       <h5>{title}</h5>
       <p>{completed ? "completed" : "uncompleted"}</p>
-    </li>
+    </TodoCard>
   );
 }
 Todo.propTypes = {

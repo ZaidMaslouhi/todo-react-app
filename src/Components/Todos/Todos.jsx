@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { ContentHeader } from "../../App.styles";
+import { ContentHeader, List } from "../../App.styles";
 import { useNavigate, useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import axios from "axios";
+import Todo from "./Todo";
 
 function Todos() {
   const { id } = useParams();
@@ -22,13 +23,11 @@ function Todos() {
         <IoIosArrowBack data-testid="back-icon" onClick={() => navigate("/")} />
         <h3>Todos</h3>
       </ContentHeader>
-      <ul>
+      <List>
         {todos.map((todo) => (
-          <li key={todo.id}>
-            title: {todo.title} - completed: {todo.completed}
-          </li>
+          <Todo key={todo.id} title={todo.title} completed={todo.completed} />
         ))}
-      </ul>
+      </List>
     </div>
   );
 }
