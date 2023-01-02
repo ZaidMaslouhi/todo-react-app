@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { UserCard } from "./styles/user.styles";
 
 function User({ id, name, username, email }) {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   return (
     <UserCard key={id} onClick={() => navigate(`/todos/${id}`)}>
