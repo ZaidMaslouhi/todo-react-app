@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "./assets/images/logo.png";
-import Users from "./Components/Users/Users";
+import { Route, Routes } from "react-router-dom";
 import Todos from "./Components/Todos/Todos";
-import { Body, Container, Header, Section } from "./App.styles";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Users from "./Components/Users/Users";
 import NotFound from "./Components/404/NotFound";
+import logo from "./assets/images/logo.png";
+import { Body, Container, Header, Section } from "./App.styles";
 
 function App() {
   return (
@@ -14,13 +14,11 @@ function App() {
           <img src={logo} alt="chari's logo" className="logo-img" />
         </Header>
         <Section>
-          <Router>
-            <Routes>
-              <Route path="/" exact element={<Users />} />
-              <Route path="/todos/:id" element={<Todos />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Router>
+          <Routes>
+            <Route path="/" exact element={<Users />} />
+            <Route path="/todos/:id" element={<Todos />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </Section>
       </Container>
     </Body>

@@ -7,7 +7,7 @@ export default function NotFound() {
   const navigate = useNavigate();
 
   return (
-    <NotFoundPage data-testid="not-found">
+    <NotFoundPage role="notfound">
       <p>404 Page not found!</p>
       <button onClick={() => navigate("/")}>
         <IoIosArrowBack /> Back to Home

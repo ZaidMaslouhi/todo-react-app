@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import backgoundImage from "./assets/images/backgrouond-gradient.png";
-import { ClipLoader } from "react-spinners";
 
 export const Body = styled.div`
   background: url(${backgoundImage}) center bottom/cover no-repeat;
@@ -110,7 +109,7 @@ export const Loading = styled.span`
   justify-content: center;
   align-items: center;
   height: 80%;
-  & ${ClipLoader} {
+  & svg {
     color: #f2a187;
   }
 `;

@@ -8,7 +8,7 @@ function Users() {
   const { data: users, loading, error } = useFetch(`/users`);
 
   return (
-    <div className="users">
+    <div className="users" role="userslist">
       <ContentHeader>
         <h3>List of users</h3>
       </ContentHeader>

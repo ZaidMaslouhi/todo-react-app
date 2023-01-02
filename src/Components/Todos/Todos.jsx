@@ -12,7 +12,7 @@ function Todos() {
   const navigate = useNavigate();
 
   return (
-    <div data-testid="todos">
+    <div role="todoslist">
       <ContentHeader>
         <IoIosArrowBack data-testid="back-icon" onClick={() => navigate("/")} />
         <h3>Todos</h3>
