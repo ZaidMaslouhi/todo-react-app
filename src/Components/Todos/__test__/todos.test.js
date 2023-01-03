@@ -93,8 +93,6 @@ describe("Todos", () => {
   });
 
   it("should navigate to the home page when the back button is clicked", () => {
-    // const params = { id: 10 };
-    // useParams.mockImplementation(() => params);
     const navigate = jest.fn();
     useNavigate.mockImplementation(() => navigate);
     render(<Todos />);
