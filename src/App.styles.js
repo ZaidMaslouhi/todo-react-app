@@ -28,7 +28,8 @@ export const Header = styled.header`
   height: 15%;
   text-align: center;
   & .logo-img {
-    height: -webkit-fill-available;
+    height: 60%;
+    margin: 0.8rem 0;
   }
 `;
 
